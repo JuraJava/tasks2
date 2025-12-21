@@ -1,9 +1,8 @@
-
 /**
-* ЗАДАЧА
-* Вы должны выбрать самого старшего человека каждого пола из списка, используя streamsAPI
-* Вы разрешили писать код только в методе takeOnlyOldestInEachGender
-*/
+ * ЗАДАЧА
+ * Выбрать самого старшего человека каждого пола из списка, используя Stream API
+ * Разрешено  писать  код только в методе takeOnlyOldestInEachGender
+ */
 package org.example;
 
 import java.util.HashSet;
