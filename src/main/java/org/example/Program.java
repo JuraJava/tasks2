@@ -1,3 +1,9 @@
+
+/**
+* ЗАДАЧА
+* Вы должны выбрать самого старшего человека каждого пола из списка, используя streamsAPI
+* Вы разрешили писать код только в методе takeOnlyOldestInEachGender
+*/
 package org.example;
 
 import java.util.HashSet;
@@ -40,11 +46,6 @@ class Program {
         }
     }
 
-    /**
-     * TASK
-     * You should take the oldest person of each gender from the list using streamsAPI
-     * You allowed to write code only in method takeOnlyOldestInEachGender
-     */
     private static List<Person> takeOnlyOldestInEachGender(List<Person> persons) {
         return persons.stream()
                 .collect(Collectors.toMap(
@@ -74,7 +75,6 @@ class Program {
         /* Verification */
         test(people);
     }
-
 
     private static void test(List<Person> people) {
         List<Person> finalSelection = takeOnlyOldestInEachGender(people);
