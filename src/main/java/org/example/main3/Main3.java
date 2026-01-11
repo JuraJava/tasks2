@@ -20,30 +20,30 @@ import java.util.Optional;
 public class Main3 {
     public static void main(String[] args) {
         // 1. Создаем список людей
-        List<Person> persons = List.of(
-                new Person("Alice", 25),
-                new Person("Bob", 30),
-                new Person("Bob", 35),
-                new Person("Bob", 40),
-                new Person("Bob", 45),
-                new Person("Charlie", 35)
+        List<Person3> person3s = List.of(
+                new Person3("Alice", 25),
+                new Person3("Bob", 30),
+                new Person3("Bob", 35),
+                new Person3("Bob", 40),
+                new Person3("Bob", 45),
+                new Person3("Charlie", 35)
         );
         // 2. Ищем человека по имени
         String searchName = "Bob";
-        Optional<Person> result = findPersonByName(persons, searchName);
+        Optional<Person3> result = findPersonByName(person3s, searchName);
 
         // 3. Выводим результат разными способами:
         // Способ 2: С использованием ifPresent (более идиоматично)
         System.out.print("Результат поиска: ");
         result.ifPresentOrElse(
-                person -> System.out.println(person),
+                person3 -> System.out.println(person3),
                 () -> System.out.println("Не найден")
         );
 
     }
 
-    static Optional<Person> findPersonByName(List<Person> persons, String name) {
-        return persons.stream()
+    static Optional<Person3> findPersonByName(List<Person3> person3s, String name) {
+        return person3s.stream()
                 .filter(p -> p.name != null && p.name.equals(name))
                 .findFirst();
     }

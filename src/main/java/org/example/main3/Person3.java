@@ -1,10 +1,10 @@
 package org.example.main3;
 
-class Person {
+class Person3 {
     String name;
     Integer age;
 
-    public Person(String name, Integer age) {
+    public Person3(String name, Integer age) {
         this.name = name;
         this.age = age;
     }
