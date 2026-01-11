@@ -1,5 +1,7 @@
 plugins {
     id 'java'
+    id 'org.springframework.boot' version '3.2.0'
+    id 'io.spring.dependency-management' version '1.1.4'
 }
 
 group = 'org.example'
@@ -10,7 +12,40 @@ repositories {
 }
 
 dependencies {
-    testImplementation platform('org.junit:junit-bom:5.10.0')
+    // Spring Boot Starters
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+    // База данных
+    runtimeOnly 'org.postgresql:postgresql'
+
+    // Lombok
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+
+    // ===== ОБРАБОТКА ДОКУМЕНТОВ =====
+
+    // 1. Jackson для XML (для XmlMapper)
+    implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-xml'
+
+    // 2. iText для работы с PDF (для PdfReader, PdfTextExtractor)
+    // Важно: iText 5.x - AGPL лицензия, для коммерческого использования нужна коммерческая лицензия
+    implementation 'com.itextpdf:itextpdf:5.5.13.4'
+
+    // 3. Apache POI для работы с Word документами (для XWPFDocument, XWPFWordExtractor)
+    implementation 'org.apache.poi:poi-ooxml:5.2.5'
+
+    // 4. Jackson для JSON (уже есть в Spring Boot, но можно явно указать)
+    implementation 'com.fasterxml.jackson.core:jackson-databind'
+
+    // 5. Logging (уже есть в Spring Boot)
+    implementation 'ch.qos.logback:logback-classic'
+
+    // 6. Apache Commons
+    implementation 'org.apache.commons:commons-lang3'
+
+    // ===== ТЕСТИРОВАНИЕ =====
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.junit.jupiter:junit-jupiter'
 }
 
