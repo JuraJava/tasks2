@@ -1,5 +1,7 @@
 package org.example.main3;
 
+import java.math.BigDecimal;
+
 class Person3 {
     String name;
     Integer age;
